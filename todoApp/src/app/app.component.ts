@@ -23,27 +23,27 @@ import { trigger, animate, style, transition, keyframes } from '@angular/animati
     ])
 ]
 })
+
 export class AppComponent {
   todoArray : string[] = [];
-  addTodo(value: string){
+  addTodo(value:string){
      this.todoArray.push(value);
-     //console.log(this.todoArray);
    }
   /*delete item*/
-  deleteItem(todo: string){
-    for(let i=0 ;i<= this.todoArray.length ;i++){
-     if(todo== this.todoArray[i]){
-      this.todoArray.splice(i,1)
+  deleteItem(todo:string) {
+    for (let i = 0; i <= this.todoArray.length; i++) {
+     if (todo == this.todoArray[i]) {
+      this.todoArray.splice(i, 1)
      }
     }
    }
 
   // submit Form
-  todoSubmit(value:any){
-    if(value!==""){
-   this.todoArray.push(value.todo)
-    //this.todoForm.reset()
-   }else{
+  todoSubmit(value:any) {
+    if (value !== "") {
+      this.todoArray.push(value.todo)
+      //this.todoForm.reset()
+   } else {
      alert('Field required **')
    }
   }
