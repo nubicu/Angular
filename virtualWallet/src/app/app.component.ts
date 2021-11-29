@@ -15,7 +15,7 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.getCoinsData();
-    setInterval(this.getCoinsData.bind(this), 50000);
+    window.setInterval(this.getCoinsData.bind(this), 50000);
   }
 
   getCoinsData() {
