@@ -7,6 +7,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: inline-block;
+    font-weight: bold;
   }
   
   .mat-card-subtitle, .mat-card-title {
@@ -15,10 +16,12 @@
   
   .green {
     color: lightgreen;
+    font-weight: bold;
   }
   
   .red {
     color: red;
+    font-weight: bold;
   }
   
   .favorite-card {

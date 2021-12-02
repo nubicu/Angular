@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CoinInfo } from 'src/app/models/CoinsInfo';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   
-  @Input() coins: any;
+  @Input() coins: CoinInfo[] = [];
   
   constructor() { }
 

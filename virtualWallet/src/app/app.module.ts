@@ -10,6 +10,12 @@ import { FavoriteComponent } from './components/favorite/favorite.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
+import { CoinDetailsComponent } from './components/coin-details/coin-details.component';
+import { WalletComponent } from './components/wallet/wallet.component';
+import { GraphicComponent } from './components/graphic/graphic.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -18,11 +24,17 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardComponent,
     FooterComponent,
     FavoritesComponent,
-    FavoriteComponent
+    FavoriteComponent,
+    CoinDetailsComponent,
+    WalletComponent,
+    GraphicComponent
   ],
   imports: [
     BrowserModule,
     MatCardModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatIconModule,
     BrowserAnimationsModule,
     HttpClientModule
   ],
