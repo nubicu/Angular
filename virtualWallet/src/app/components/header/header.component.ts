@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CoinInfo } from 'src/app/models/CoinsInfo';
+import { CoinInfo } from './../../models/CoinsInfo';
 
 @Component({
   selector: 'app-header',

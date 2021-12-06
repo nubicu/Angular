@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CoinInfo } from 'src/app/models/CoinsInfo';
-import { SharedDataService } from 'src/app/services/shared-data.service';
+import { CoinInfo } from './../../models/CoinsInfo';
+import { SharedDataService } from './../../services/shared-data.service';
 
 @Component({
   selector: 'app-favorites',
@@ -35,10 +35,7 @@ export class FavoritesComponent implements OnInit {
 
   setFavorites() {
     this.sharedData.getCoin().subscribe( coinId => {
-      this.favorites = this.coins.filter(  
-        (coin: CoinInfo) =>
-          coin.id === coinId
-      );
+      this.favorites = this.coins.filter((coin: CoinInfo) => coin.id === coinId);
       this.favorites.forEach((favorite) => {
         favorite.my_currency = this.myCoins[favorite.id] * favorite.current_price;
       })

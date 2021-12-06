@@ -4,11 +4,11 @@ export interface CoinInfo {
     name: string;
     image: string;
     current_price: number;
-    market_cap: any;
+    market_cap: number;
     my_currency?: number;
     market_cap_rank: number;
     fully_diluted_valuation?: number;
-    total_volume: any;
+    total_volume: number;
     high_24h: number;
     low_24h: number;
     price_change_24h: number;
