@@ -14,6 +14,7 @@ export class CoinDetailsComponent implements OnInit {
 
   displayedColumns: string[] = ['info', 'image', 'name', 'current_price', 'symbol',  'last_updated', 'favorites'];
   dataSource = new MatTableDataSource<CoinInfo>();
+  public selectedCoin: CoinInfo;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -23,12 +24,17 @@ export class CoinDetailsComponent implements OnInit {
     }
     else {
       this.favoritesSet.add(element.id);
-      this.sharedData.coin$.next(element.id);
     }
+    this.sharedData.coin$.next(element.id);
   }
 
   public favoritesSet = new Set<string>();
 
+  public setSelectedCoin(coin: CoinInfo) {
+    this.selectedCoin = coin;
+    this.sharedData.selectedCoin$.next(coin.id);
+  }
+  
   constructor(private coinService: CoinsService, private sharedData: SharedDataService) { }
 
   ngOnInit(): void {

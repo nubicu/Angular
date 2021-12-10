@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CoinInfo } from './models/CoinsInfo';
 import { CoinsService } from './services/coins.service';
+import { fromEvent, interval, switchMap, take } from 'rxjs';
 
 @Component({
   selector: 'app-root',

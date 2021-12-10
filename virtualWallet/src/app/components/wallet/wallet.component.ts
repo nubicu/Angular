@@ -13,8 +13,8 @@ export class WalletComponent implements OnInit {
   constructor(private sharedData: SharedDataService) { }
 
   ngOnInit(): void {
-    this.sharedData.getCoin().subscribe(coinId => {
-      this.coinId = coinId;
+    this.sharedData.getCoin().subscribe(ids => {
+      this.coinId = ids;
     })
   }
 
