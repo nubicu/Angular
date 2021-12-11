@@ -8,7 +8,7 @@ import { SharedDataService } from 'src/app/services/shared-data.service';
 })
 export class WalletComponent implements OnInit {
 
-  public coinId: string;
+  public coinId: string[];
   
   constructor(private sharedData: SharedDataService) { }
 

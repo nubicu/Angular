@@ -7,13 +7,13 @@ import { CoinInfo } from './../models/CoinsInfo';
 })
 export class SharedDataService {
 
-  public coin$ = new BehaviorSubject<string>(undefined);
+  public coin$ = new BehaviorSubject<string[]>(undefined);
 
   public selectedCoin$ = new Subject<string>();
 
   constructor() { }
 
-  public getCoin(): Observable<string> {
+  public getCoin(): Observable<string[]> {
     return this.coin$.asObservable();
   }
 

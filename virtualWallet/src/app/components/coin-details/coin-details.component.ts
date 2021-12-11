@@ -25,7 +25,7 @@ export class CoinDetailsComponent implements OnInit {
     else {
       this.favoritesSet.add(element.id);
     }
-    this.sharedData.coin$.next(element.id);
+    this.sharedData.coin$.next([...this.favoritesSet]);
   }
 
   public favoritesSet = new Set<string>();

@@ -43,7 +43,9 @@ export class FavoritesComponent implements OnInit {
 
       if (Array.isArray(ids)) {
         ids.forEach((id: string) => {
-          const coin: CoinInfo =  this.coins.find((coin: CoinInfo) => coin.id === id);
+          const coin: CoinInfo =  this.coins.find((coin: CoinInfo) => {
+            return coin.id === id;
+          });
           coin.my_currency = (this.myCoins[coin.id] || 0) * coin.current_price;
           this.favorites.push(coin);
         });
