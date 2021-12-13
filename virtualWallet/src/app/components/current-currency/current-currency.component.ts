@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedDataService } from 'src/app/services/shared-data.service';
 
 @Component({
   selector: 'app-current-currency',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CurrentCurrencyComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sharedDataService: SharedDataService) { }
 
   ngOnInit(): void {
   }
 
+  addMoneyToWallet(el: any) {
+    this.sharedDataService.addBudget(+el.value);
+    el.value = 0;
+  }
+
+  removeMoneyFromWallet(el: any) {
+    this.sharedDataService.removeBudget(+el.value);
+    el.value = 0;
+  }
 }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -25,6 +26,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 
 import { CurrentCurrencyComponent } from './components/current-currency/current-currency.component';
+import { TransactionComponent } from './components/transaction/transaction.component';
+
+const routes: Routes = [
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'history', component: TransactionComponent },
+];
 
 @NgModule({
   declarations: [
@@ -38,6 +46,7 @@ import { CurrentCurrencyComponent } from './components/current-currency/current-
     WalletComponent,
     GraphicComponent,
     CurrentCurrencyComponent,
+    TransactionComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +64,7 @@ import { CurrentCurrencyComponent } from './components/current-currency/current-
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts'),
     }),
+    RouterModule.forRoot(routes),
   ],
   providers: [],
   bootstrap: [AppComponent],

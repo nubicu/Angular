@@ -14,3 +14,7 @@
     margin: 4px;
     margin-right: 10px;
   }
+
+  #but-add, #but-remove {
+    margin: 5px;
+  }

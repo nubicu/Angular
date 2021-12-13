@@ -51,3 +51,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ### Implemented favorites functionality
 ### Added graphic component
 ### RxJs - switchMap
+
