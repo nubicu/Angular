@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
+import { NgxEchartsModule } from 'ngx-echarts';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -18,8 +20,11 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
 
-import { NgxEchartsModule } from 'ngx-echarts';
+import { CurrentCurrencyComponent } from './components/current-currency/current-currency.component';
 
 @NgModule({
   declarations: [
@@ -31,22 +36,27 @@ import { NgxEchartsModule } from 'ngx-echarts';
     FavoriteComponent,
     CoinDetailsComponent,
     WalletComponent,
-    GraphicComponent
+    GraphicComponent,
+    CurrentCurrencyComponent,
   ],
   imports: [
     BrowserModule,
-    MatCardModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatIconModule,
-    MatMenuModule,
     BrowserAnimationsModule,
+    FormsModule,
     HttpClientModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
+    MatInputModule,
+    MatMenuModule,
+    MatPaginatorModule,
+    MatSelectModule,
+    MatTableModule,
     NgxEchartsModule.forRoot({
-      echarts: () => import('echarts')
+      echarts: () => import('echarts'),
     }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
