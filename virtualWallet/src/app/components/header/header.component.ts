@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CoinInfo } from './../../models/CoinsInfo';
+import { SharedDataService } from 'src/app/services/shared-data.service';
 
 @Component({
   selector: 'app-header',
@@ -9,10 +10,14 @@ import { CoinInfo } from './../../models/CoinsInfo';
 export class HeaderComponent implements OnInit {
   
   @Input() coins: CoinInfo[] = [];
+  showCurrency:boolean;
   
-  constructor() { }
+  constructor(private sharedDataService:SharedDataService) { }
 
   ngOnInit(): void {
+    this.sharedDataService.showHeaderBudgetAdd.subscribe(s=>
+      this.showCurrency=s
+    )
   }
 
 }

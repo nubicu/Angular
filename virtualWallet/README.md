@@ -52,3 +52,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ### Added graphic component
 ### RxJs - switchMap
 
+## Curs 5
+### Added routes & navigation
+### Implemented Add Money functionality
+### Implemented wallet functionality Part 1

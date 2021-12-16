@@ -19,7 +19,7 @@ export class CurrentCurrencyComponent implements OnInit {
   }
 
   removeMoneyFromWallet(el: any) {
-    this.sharedDataService.removeBudget(+el.value);
+    this.sharedDataService.subtractBudget(+el.value);
     el.value = 0;
   }
 }

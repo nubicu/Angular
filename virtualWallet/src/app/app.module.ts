@@ -24,14 +24,17 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSortModule } from '@angular/material/sort';
 
 import { CurrentCurrencyComponent } from './components/current-currency/current-currency.component';
 import { TransactionComponent } from './components/transaction/transaction.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'history', component: TransactionComponent },
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
@@ -47,6 +50,7 @@ const routes: Routes = [
     GraphicComponent,
     CurrentCurrencyComponent,
     TransactionComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +64,7 @@ const routes: Routes = [
     MatMenuModule,
     MatPaginatorModule,
     MatSelectModule,
+    MatSortModule,
     MatTableModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts'),
