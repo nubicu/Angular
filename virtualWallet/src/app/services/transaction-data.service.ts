@@ -33,7 +33,7 @@ export class TransactionDataService {
   public removeTransactionFromHistory(transaction : TransactionData) : void {
     let transactionData : TransactionData[] = JSON.parse(this.RetrieveTransactionsFromStorage()); 
     if (transactionData){
-      localStorage.setItem('transactions', JSON.stringify(transactionData.filter((a)=>a.no !== transaction.no)))
+      localStorage.setItem('transactions', JSON.stringify(transactionData.filter( (a) => a.no !== transaction.no)))
     }
     return;
   }
